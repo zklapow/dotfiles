@@ -9,7 +9,7 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-bundles="jedi-vim syntastic nerdtree vim-fugitive"
+bundles="jedi-vim syntastic nerdtree vim-fugitive vim-coffee-script"
 
 ##########
 
