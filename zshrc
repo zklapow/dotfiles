@@ -202,3 +202,9 @@ export PATH=$PATH:$GOPATH/bin
 ##################### ALIAS #########################
 alias lines='git ls-files | xargs wc -l'
 alias deployer='/Users/zklapow/dev/src/fabric_deploy/.virtualenv/bin/deployer'
+
+################## Functions #######################
+
+st () {
+  python -c "import sanetime;print(sanetime.time(millis=$1))"
+}

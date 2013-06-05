@@ -42,3 +42,6 @@ ln -s $dir/zklapow.zsh-theme ~/.oh-my-zsh/themes/zklapow.zsh-theme
 
 # Set ZSH as default shell
 chsh -s /bin/zsh
+
+# Install python modules
+sudo pip install sanetime jedi
