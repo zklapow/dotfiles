@@ -43,6 +43,8 @@ nnoremap <C-l> <C-w>l
 " imap <right> <nop>
 
 au BufNewFile,BufRead *.html set syntax=htmljinja
+au BufNewFile,BufRead *.hbs set syntax=htmljinja
+
 
 " Strip whitespace in python files
 autocmd BufWritePre *.py :%s/\s\+$//e
@@ -66,43 +68,5 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
       \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
 
-"statusline setup
-set statusline =%#identifier#
-set statusline+=[%t]    "tail of the filename
-set statusline+=%*
-
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-
-"read only flag
-set statusline+=%#identifier#
-set statusline+=%r
-set statusline+=%*
-
-"modified flag
-set statusline+=%#identifier#
-set statusline+=%m
-set statusline+=%*
-
-set statusline+=%{fugitive#statusline()}
-
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
 set laststatus=2
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim

@@ -19,3 +19,9 @@
 [submodule "vim-coffee-script"]
 	path = vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim-multiple-cursors"]
+	path = vim-multiple-cursors
+	url = git://github.com/terryma/vim-multiple-cursors.git
+[submodule "powerline"]
+	path = powerline
+	url = git://github.com/Lokaltog/powerline.git
