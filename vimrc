@@ -70,3 +70,7 @@ imap <C-@> <C-Space>
 
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" SHITTY
+autocmd FileType python set completeopt-=preview
+autocmd FileType go set completeopt-=preview
