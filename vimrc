@@ -74,3 +74,5 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " SHITTY
 autocmd FileType python set completeopt-=preview
 autocmd FileType go set completeopt-=preview
+
+set backspace=2 " make backspace work like most other apps
