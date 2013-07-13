@@ -70,3 +70,8 @@ imap <C-@> <C-Space>
 
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+set completeopt-=preview
+
+" If you forget sudo
+cmap w!! w !sudo tee > /dev/null %

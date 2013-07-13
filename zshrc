@@ -208,3 +208,6 @@ alias deployer='/Users/zklapow/dev/src/fabric_deploy/.virtualenv/bin/deployer'
 st () {
   python -c "import sanetime;print(sanetime.time(millis=$1))"
 }
+
+################## NPM ##############################
+export PATH=$PATH:/usr/local/share/npm/bin
