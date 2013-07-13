@@ -9,7 +9,7 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-bundles="jedi-vim syntastic nerdtree vim-fugitive vim-coffee-script powerline"
+bundles="jedi-vim syntastic nerdtree vim-fugitive vim-coffee-script powerline YouCompleteMe"
 
 ##########
 
@@ -35,6 +35,10 @@ for bundle in $bundles; do
     echo "Installing vim bundle $bundle"
     ln -s $dir/$bundle ~/.vim/bundle/$bundle
 done
+
+# Build YCM
+# Assumes system libclang>=3.3
+mkdir ~/ycm_build && cd ~/ycm_build && cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON ~/.vim/bundle/YouCompleteMe/cpp && make ycm_core && cd -
 
 # ZSH Theme
 echo "Installing custom zsh theme"

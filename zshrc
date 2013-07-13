@@ -171,7 +171,7 @@ plugins=(git mercurial python textmate osx pip github screen)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 #export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/usr/local/lib/python:$PYTHONPATH"
 
 ######## VIRTUALENV #########
@@ -203,7 +203,7 @@ export PATH=$PATH:$GOPATH/bin
 alias lines='git ls-files | xargs wc -l'
 alias deployer='/Users/zklapow/dev/src/fabric_deploy/.virtualenv/bin/deployer'
 
-################## Functions #######################
+################## Functions ########################
 
 st () {
   python -c "import sanetime;print(sanetime.time(millis=$1))"
@@ -211,3 +211,8 @@ st () {
 
 ################## NPM ##############################
 export PATH=$PATH:/usr/local/share/npm/bin
+
+################### Mummify #########################
+export OSIRIS=$GOPATH/src/osiris
+export ANUBIS=$GOPATH/src/anubis
+export PTAH=$GOPATH/src/ptah
