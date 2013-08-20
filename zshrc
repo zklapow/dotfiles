@@ -216,3 +216,27 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export OSIRIS=$GOPATH/src/osiris
 export ANUBIS=$GOPATH/src/anubis
 export PTAH=$GOPATH/src/ptah
+export GIZA=~/dev/src/giza
+export HORUS=~/dev/src/horus
+
+################ Marks ##############################
+
+export MARKPATH=$HOME/.marks
+function jump {
+    cd -P $MARKPATH/$1 2> /dev/null || echo "No such mark: $1"
+}
+function mark {
+    mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
+}
+function unmark {
+    rm -i $MARKPATH/$1
+}
+function marks {
+    ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- && echo
+}
+
+function _marks {
+  reply=($(ls $MARKPATH))
+}
+compctl -K _marks jump
+compctl -K _marks unmark
