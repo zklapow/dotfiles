@@ -28,6 +28,9 @@ set title
 set visualbell
 set noerrorbells
 
+set nobackup
+let g:syntastic_ignore_files=['\c\.java$', '\c\.coffee$']
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -76,3 +79,6 @@ autocmd FileType python set completeopt-=preview
 autocmd FileType go set completeopt-=preview
 
 set backspace=2 " make backspace work like most other apps
+
+" CoffeeScript
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!

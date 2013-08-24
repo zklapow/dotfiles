@@ -166,7 +166,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mercurial python textmate osx pip github screen)
+plugins=(git mercurial python osx pip github screen go tmux battery)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -203,6 +203,8 @@ export PATH=$PATH:$GOPATH/bin
 alias lines='git ls-files | xargs wc -l'
 alias deployer='/Users/zklapow/dev/src/fabric_deploy/.virtualenv/bin/deployer'
 
+alias millis='date +%s%N | cut -b1-13'
+
 ################## Functions ########################
 
 st () {
@@ -213,3 +215,15 @@ st () {
 export OSIRIS=$GOPATH/src/osiris
 export ANUBIS=$GOPATH/src/anubis
 export PTAH=$GOPATH/src/ptah
+
+# Open a new Hipchat
+alias hipchat='open -n /Applications/HipChat.app'
+alias newapp='open -n $1'
+
+# OpenTSDB
+alias tsdbhbaseinit='env COMPRESSION=NONE HBASE_HOME=/Users/zklapow/dev/hbase /Users/zklapow/dev/opentsdb/src/create_table.sh'
+tsdbstart () {
+  export tsdtmp=${TMPDIR-'/tmp'}tsd
+  mkdir -p $tsdtmp
+  /Users/zklapow/dev/opentsdb/build/tsdb tsd --port=4242 --staticroot=/Users/zklapow/dev/opentsdb/build/staticroot --cachedir="$tsdtmp" --auto-metric
+}

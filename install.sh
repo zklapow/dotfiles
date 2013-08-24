@@ -38,7 +38,7 @@ done
 
 # Build YCM
 # Assumes system libclang>=3.3
-mkdir ~/ycm_build && cd ~/ycm_build && cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON ~/.vim/bundle/YouCompleteMe/cpp && make ycm_core && cd -
+mkdir -p ~/ycm_build && cd ~/ycm_build && cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON ~/.vim/bundle/YouCompleteMe/cpp && make ycm_core && cd -
 
 # ZSH Theme
 echo "Installing custom zsh theme"
